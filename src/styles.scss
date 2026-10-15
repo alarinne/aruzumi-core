@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-background: #101115;
+  --color-text: #eeeaf2;
+  --color-accent: #c49af3;
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: Consolas, 'Liberation Mono', monospace;
+  font-size: 16px;
+  line-height: 1.6;
+}
