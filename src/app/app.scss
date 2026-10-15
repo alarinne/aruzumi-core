@@ -1,5 +1,38 @@
-.theme-preview {
-  margin: 0;
-  padding: 24px;
-  color: var(--color-accent);
+.terminal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 16px;
+  border-bottom: 1px solid #29262f;
+  position: relative;
+}
+
+.terminal-title {
+  font-size: 13px;
+}
+
+.terminal-controls {
+  position: absolute;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminal-dot-red {
+  background: #ff5f57;
+}
+
+.terminal-dot-yellow {
+  background: #febc2e;
+}
+
+.terminal-dot-green {
+  background: #28c840;
 }
