@@ -51,3 +51,17 @@
   letter-spacing: 0;
   line-height: 1.2;
 }
+
+.intro-banner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.crescent {
+  margin: 0;
+  color: var(--color-accent);
+  font-family: inherit;
+  font-size: clamp(4px, 1vw, 12px);
+  line-height: 1;
+}
