@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { NAME_BANNER } from './ascii/name-banner';
+import { CRESCENT } from './ascii/crescent';
 
 @Component({
   imports: [],
@@ -10,4 +11,5 @@ import { NAME_BANNER } from './ascii/name-banner';
 export class App {
   protected readonly title = signal('aruzumi-core');
   readonly nameBanner = NAME_BANNER;
+  readonly crescent = CRESCENT;
 }
