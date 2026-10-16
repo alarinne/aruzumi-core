@@ -86,6 +86,44 @@
   animation: cursor-blink 1s step-end infinite;
 }
 
+.command-line {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 0;
+}
+
+.command-prompt {
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+.command-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-size: 16px;
+  caret-color: var(--color-accent);
+}
+
+.terminal-entry {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.command-line {
+  line-height: 1.4;
+}
+
+.intro-hint {
+  margin-bottom: 32px;
+}
+
 @keyframes cursor-blink {
   50% {
     opacity: 0;

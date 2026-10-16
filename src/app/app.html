@@ -19,4 +19,26 @@
   <p class = "intro-hint">
     Type <span class = "intro-command">help</span> to explore.
   </p>
+  @for (entry of history(); track $index) {
+    <div class="terminal-entry">
+      <div class="command-line">
+        <span class="command-prompt">guest@aruzumi:~$</span>
+        <span>{{ entry.command }}</span>
+      </div>
+      <p class="command-output">{{ entry.output }}</p>
+    </div>
+  }
+  <div class = "command-line">
+    <span class = "command-prompt">guest@aruzumi:~$</span>
+    <input
+      #commandInput
+      class = "command-input"
+      type = "text"
+      aria-label = "Terminal command"
+      autocomplete = "off"
+      autocapitalize = "off"
+      spellcheck = "false"
+      (keydown.enter) = "executeCommand(commandInput)"
+      />
+  </div>
 </main>
