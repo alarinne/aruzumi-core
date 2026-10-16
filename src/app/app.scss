@@ -65,3 +65,35 @@
   font-size: clamp(4px, 1vw, 12px);
   line-height: 1;
 }
+
+.intro-tagline {
+  margin: 20px 0 0;
+}
+
+.intro-hint {
+  margin: 24px 0 0;
+  color: #92909c;
+  font-size: 14px;
+}
+
+.intro-command {
+  color: var(--color-accent);
+}
+
+.intro-tagline::after {
+  content: '_';
+  color: var(--color-accent);
+  animation: cursor-blink 1s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-tagline::after {
+    animation: none;
+  }
+}
