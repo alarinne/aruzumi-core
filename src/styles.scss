@@ -12,3 +12,15 @@ body {
   font-size: 16px;
   line-height: 1.6;
 }
+
+.command-output {
+  margin: 0;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.terminal-entry {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
