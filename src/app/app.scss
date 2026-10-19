@@ -1,0 +1,137 @@
+.terminal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 16px;
+  border-bottom: 1px solid #29262f;
+  position: relative;
+}
+
+.terminal-title {
+  font-size: 13px;
+}
+
+.terminal-controls {
+  position: absolute;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminal-dot-red {
+  background: #ff5f57;
+}
+
+.terminal-dot-yellow {
+  background: #febc2e;
+}
+
+.terminal-dot-green {
+  background: #28c840;
+}
+
+.terminal-content {
+  padding: 32px 24px;
+}
+
+.name-banner {
+  margin: 0;
+  color: var(--color-accent);
+  white-space: pre;
+  font-size: clamp(6px, 1.5vw, 18px);
+  font-family: Consolas, 'Liberation Mono', monospace;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+.intro-banner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.crescent {
+  margin: 0;
+  color: var(--color-accent);
+  font-family: inherit;
+  font-size: clamp(4px, 1vw, 12px);
+  line-height: 1;
+}
+
+.intro-tagline {
+  margin: 20px 0 0;
+}
+
+.intro-hint {
+  margin: 24px 0 0;
+  color: #92909c;
+  font-size: 14px;
+}
+
+.intro-command {
+  color: var(--color-accent);
+}
+
+.intro-tagline::after {
+  content: '_';
+  color: var(--color-accent);
+  animation: cursor-blink 1s step-end infinite;
+}
+
+.command-line {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 0;
+}
+
+.command-prompt {
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+.command-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-size: 16px;
+  caret-color: var(--color-accent);
+}
+
+.terminal-entry {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.command-line {
+  line-height: 1.4;
+}
+
+.intro-hint {
+  margin-bottom: 32px;
+}
+
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-tagline::after {
+    animation: none;
+  }
+}
