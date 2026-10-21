@@ -25,7 +25,18 @@
         <span class="command-prompt">guest@aruzumi:~$</span>
         <span>{{ entry.command }}</span>
       </div>
-      <p class="command-output">{{ entry.output }}</p>
+      @if (entry.command === 'help') {
+        <dl class="help-list">
+          @for (command of commands; track command.name) {
+            <div class="help-row">
+              <dt>{{ command.name }}</dt>
+              <dd>{{ command.description }}</dd>
+            </div>
+          }
+        </dl>
+      } @else {
+        <p class="command-output">{{ entry.output }}</p>
+      }
     </div>
   }
   <div class = "command-line">

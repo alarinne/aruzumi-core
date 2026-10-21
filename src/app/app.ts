@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { NAME_BANNER } from './ascii/name-banner';
 import { CRESCENT } from './ascii/crescent';
+import { COMMAND_LIST } from './terminal/command-list';
 
 interface TerminalEntry{
   command: string;
@@ -18,6 +19,7 @@ export class App {
   readonly nameBanner = NAME_BANNER;
   readonly crescent = CRESCENT;
   readonly history = signal<TerminalEntry[]>([]);
+  readonly commands = COMMAND_LIST;
 
   executeCommand(input: HTMLInputElement): void {
     const command = input.value.trim();
@@ -27,7 +29,7 @@ export class App {
     }
 
     const output = command === 'help'
-      ? 'Available commands will appear here soon.'
+      ? ''
       : `Command not found: ${command}. Type help.`;
 
     this.history.update(entries => [...entries, { command, output }]);
