@@ -124,6 +124,26 @@
   margin-bottom: 32px;
 }
 
+.help-list {
+  margin: 8px 0;
+}
+
+.help-row {
+  display: grid;
+  grid-template-columns: 12ch minmax(0, 1fr);
+  column-gap: 16px;
+  padding: 2px 0;
+}
+
+.help-row dt {
+  color: var(--color-accent);
+}
+
+.help-row dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
 @keyframes cursor-blink {
   50% {
     opacity: 0;
