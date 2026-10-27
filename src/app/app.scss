@@ -39,6 +39,7 @@
 
 .terminal-content {
   padding: 32px 24px;
+  padding-bottom: 20px;
 }
 
 .name-banner {
@@ -109,6 +110,7 @@
   font: inherit;
   font-size: 16px;
   caret-color: var(--color-accent);
+  scroll-margin-bottom: 20px;
 }
 
 .terminal-entry {
