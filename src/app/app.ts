@@ -47,5 +47,17 @@ export class App {
     this.history.update(entries => [...entries, { command, output }]);
 
     input.value = '';
+
+    this.scrollToInput(input);
+  }
+
+  scrollToInput(input: HTMLInputElement): void {
+    requestAnimationFrame(() => {
+      input.scrollIntoView({
+        block: 'nearest',
+        inline: 'nearest',
+        behavior: 'auto',
+      });
+    });
   }
 }
