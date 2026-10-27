@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { NAME_BANNER } from './ascii/name-banner';
 import { CRESCENT } from './ascii/crescent';
 import { COMMAND_LIST } from './terminal/command-list';
+import { WHOAMI_TEXT} from './terminal/profile';
 
 interface TerminalEntry{
   command: string;
@@ -28,9 +29,20 @@ export class App {
       return;
     }
 
-    const output = command === 'help'
-      ? ''
-      : `Command not found: ${command}. Type help.`;
+    let output: string;
+
+    switch (command) {
+      case 'help':
+        output = '';
+        break;
+
+      case 'whoami':
+        output = WHOAMI_TEXT;
+        break;
+
+      default:
+        output = `Command not found: ${command}. Type help.`;
+    }
 
     this.history.update(entries => [...entries, { command, output }]);
 
