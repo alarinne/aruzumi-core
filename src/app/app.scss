@@ -146,6 +146,13 @@
   overflow-wrap: anywhere;
 }
 
+.work-role {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
 @keyframes cursor-blink {
   50% {
     opacity: 0;

@@ -3,6 +3,7 @@ import { NAME_BANNER } from './ascii/name-banner';
 import { CRESCENT } from './ascii/crescent';
 import { COMMAND_LIST } from './terminal/command-list';
 import { WHOAMI_TEXT} from './terminal/profile';
+import { WORK_EXPERIENCE } from './terminal/experience';
 
 interface TerminalEntry{
   command: string;
@@ -21,6 +22,7 @@ export class App {
   readonly crescent = CRESCENT;
   readonly history = signal<TerminalEntry[]>([]);
   readonly commands = COMMAND_LIST;
+  readonly workExperience = WORK_EXPERIENCE;
 
   executeCommand(input: HTMLInputElement): void {
     const command = input.value.trim();
@@ -38,6 +40,11 @@ export class App {
 
       case 'whoami':
         output = WHOAMI_TEXT;
+        break;
+
+      case 'work':
+      case 'experience':
+        output = '';
         break;
 
       default:
