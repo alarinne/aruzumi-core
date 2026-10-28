@@ -34,6 +34,31 @@
             </div>
           }
         </dl>
+      } @else if (entry.command === 'work' || entry.command === 'experience') {
+        <div class="work-list">
+          @for (job of workExperience; track job.id) {
+            <section class="work-entry">
+              <h2 class="work-role">{{ job.role }}</h2>
+
+              <a
+                class="work-company"
+                [href]="job.website"
+                target="_blank"
+                rel="noopener noreferrer"
+              >{{ job.company }} ↗</a>
+
+              <p class="work-period">{{ job.period }}</p>
+
+              @if (job.responsibilities.length > 0) {
+                <ul class="work-details">
+                  @for (item of job.responsibilities; track $index) {
+                    <li>{{ item }}</li>
+                  }
+                </ul>
+              }
+            </section>
+          }
+        </div>
       } @else {
         <p class="command-output">{{ entry.output }}</p>
       }
