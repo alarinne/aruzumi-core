@@ -4,6 +4,7 @@ import { CRESCENT } from './ascii/crescent';
 import { COMMAND_LIST } from './terminal/command-list';
 import { WHOAMI_TEXT} from './terminal/profile';
 import { WORK_EXPERIENCE } from './terminal/experience';
+import { EDUCATION } from './terminal/education';
 
 interface TerminalEntry{
   command: string;
@@ -23,6 +24,7 @@ export class App {
   readonly history = signal<TerminalEntry[]>([]);
   readonly commands = COMMAND_LIST;
   readonly workExperience = WORK_EXPERIENCE;
+  readonly education = EDUCATION
 
   executeCommand(input: HTMLInputElement): void {
     const command = input.value.trim();
@@ -44,6 +46,10 @@ export class App {
 
       case 'work':
       case 'experience':
+        output = '';
+        break;
+
+      case 'education':
         output = '';
         break;
 

@@ -150,7 +150,33 @@
   margin: 0 0 4px;
   font-size: 16px;
   font-weight: 500;
-  color: var(--color-accent);
+  color: #a47bd4;
+}
+
+.education-entry {
+  margin: 12px 0 20px;
+}
+
+.education-degree {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #a47bd4;
+}
+
+.education-university {
+  margin: 0;
+}
+
+.education-period {
+  margin: 4px 0 12px;
+  color: #92909c;
+  font-size: 14px;
+}
+
+.education-detail {
+  margin: 4px 0 0;
+  overflow-wrap: anywhere;
 }
 
 @keyframes cursor-blink {
