@@ -25,7 +25,50 @@
         <span class="command-prompt">guest@aruzumi:~$</span>
         <span>{{ entry.command }}</span>
       </div>
-      <p class="command-output">{{ entry.output }}</p>
+      @if (entry.command === 'help') {
+        <dl class="help-list">
+          @for (command of commands; track command.name) {
+            <div class="help-row">
+              <dt>{{ command.name }}</dt>
+              <dd>{{ command.description }}</dd>
+            </div>
+          }
+        </dl>
+      } @else if (entry.command === 'work' || entry.command === 'experience') {
+        <div class="work-list">
+          @for (job of workExperience; track job.id) {
+            <section class="work-entry">
+              <h2 class="work-role">{{ job.role }}</h2>
+
+              <a
+                class="work-company"
+                [href]="job.website"
+                target="_blank"
+                rel="noopener noreferrer"
+              >{{ job.company }} ↗</a>
+
+              <p class="work-period">{{ job.period }}</p>
+
+              @if (job.responsibilities.length > 0) {
+                <ul class="work-details">
+                  @for (item of job.responsibilities; track $index) {
+                    <li>{{ item }}</li>
+                  }
+                </ul>
+              }
+            </section>
+          }
+        </div>
+      } @else if (entry.command === 'education') {
+        <section class="education-entry">
+          <h2 class="education-degree">{{ education.degree }}</h2>
+          <p class="education-university">{{ education.university }}</p>
+          <p class="education-period">{{ education.period }} · Graduated</p>
+          <p class="education-detail">Diploma topic: {{ education.thesis }}</p>
+        </section>
+      } @else {
+        <p class="command-output">{{ entry.output }}</p>
+      }
     </div>
   }
   <div class = "command-line">
@@ -39,6 +82,7 @@
       autocapitalize = "off"
       spellcheck = "false"
       (keydown.enter) = "executeCommand(commandInput)"
+      (input) = "scrollToInput( commandInput)"
       />
   </div>
 </main>

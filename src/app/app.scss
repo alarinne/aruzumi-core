@@ -39,6 +39,7 @@
 
 .terminal-content {
   padding: 32px 24px;
+  padding-bottom: 20px;
 }
 
 .name-banner {
@@ -109,6 +110,7 @@
   font: inherit;
   font-size: 16px;
   caret-color: var(--color-accent);
+  scroll-margin-bottom: 20px;
 }
 
 .terminal-entry {
@@ -122,6 +124,59 @@
 
 .intro-hint {
   margin-bottom: 32px;
+}
+
+.help-list {
+  margin: 8px 0;
+}
+
+.help-row {
+  display: grid;
+  grid-template-columns: 12ch minmax(0, 1fr);
+  column-gap: 16px;
+  padding: 2px 0;
+}
+
+.help-row dt {
+  color: var(--color-accent);
+}
+
+.help-row dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.work-role {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #a47bd4;
+}
+
+.education-entry {
+  margin: 12px 0 20px;
+}
+
+.education-degree {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #a47bd4;
+}
+
+.education-university {
+  margin: 0;
+}
+
+.education-period {
+  margin: 4px 0 12px;
+  color: #92909c;
+  font-size: 14px;
+}
+
+.education-detail {
+  margin: 4px 0 0;
+  overflow-wrap: anywhere;
 }
 
 @keyframes cursor-blink {

@@ -1,6 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { NAME_BANNER } from './ascii/name-banner';
 import { CRESCENT } from './ascii/crescent';
+import { COMMAND_LIST } from './terminal/command-list';
+import { WHOAMI_TEXT} from './terminal/profile';
+import { WORK_EXPERIENCE } from './terminal/experience';
+import { EDUCATION } from './terminal/education';
 
 interface TerminalEntry{
   command: string;
@@ -18,6 +22,9 @@ export class App {
   readonly nameBanner = NAME_BANNER;
   readonly crescent = CRESCENT;
   readonly history = signal<TerminalEntry[]>([]);
+  readonly commands = COMMAND_LIST;
+  readonly workExperience = WORK_EXPERIENCE;
+  readonly education = EDUCATION
 
   executeCommand(input: HTMLInputElement): void {
     const command = input.value.trim();
@@ -26,12 +33,44 @@ export class App {
       return;
     }
 
-    const output = command === 'help'
-      ? 'Available commands will appear here soon.'
-      : `Command not found: ${command}. Type help.`;
+    let output: string;
+
+    switch (command) {
+      case 'help':
+        output = '';
+        break;
+
+      case 'whoami':
+        output = WHOAMI_TEXT;
+        break;
+
+      case 'work':
+      case 'experience':
+        output = '';
+        break;
+
+      case 'education':
+        output = '';
+        break;
+
+      default:
+        output = `Command not found: ${command}. Type help.`;
+    }
 
     this.history.update(entries => [...entries, { command, output }]);
 
     input.value = '';
+
+    this.scrollToInput(input);
+  }
+
+  scrollToInput(input: HTMLInputElement): void {
+    requestAnimationFrame(() => {
+      input.scrollIntoView({
+        block: 'nearest',
+        inline: 'nearest',
+        behavior: 'auto',
+      });
+    });
   }
 }
