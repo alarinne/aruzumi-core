@@ -9,6 +9,7 @@ export const COMMAND_LIST: CommandInfo[] = [
   { name: 'character', description: 'meet my terminal self' },
   { name: 'work', description: 'my development journey' },
   { name: 'education', description: 'where I studied' },
+  { name: 'certificates', description: 'courses and credentials' },
   { name: 'hard skills', description: 'tools of the trade' },
   { name: 'soft skills', description: 'how I work with people' },
   { name: 'projects', description: 'things I build' },
