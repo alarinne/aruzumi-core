@@ -5,6 +5,8 @@ import { COMMAND_LIST } from './terminal/command-list';
 import { WHOAMI_TEXT} from './terminal/profile';
 import { WORK_EXPERIENCE } from './terminal/experience';
 import { EDUCATION } from './terminal/education';
+import { CERTIFICATES } from './terminal/certificates';
+import { HARD_SKILLS } from './terminal/skills';
 
 interface TerminalEntry{
   command: string;
@@ -24,7 +26,9 @@ export class App {
   readonly history = signal<TerminalEntry[]>([]);
   readonly commands = COMMAND_LIST;
   readonly workExperience = WORK_EXPERIENCE;
-  readonly education = EDUCATION
+  readonly education = EDUCATION;
+  readonly certificates = CERTIFICATES;
+  readonly hardSkills = HARD_SKILLS;
 
   executeCommand(input: HTMLInputElement): void {
     const command = input.value.trim();
@@ -50,6 +54,14 @@ export class App {
         break;
 
       case 'education':
+        output = '';
+        break;
+
+      case 'certificates':
+          output = '';
+          break;
+
+      case 'hard skills':
         output = '';
         break;
 

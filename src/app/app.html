@@ -66,6 +66,39 @@
           <p class="education-period">{{ education.period }} · Graduated</p>
           <p class="education-detail">Diploma topic: {{ education.thesis }}</p>
         </section>
+      } @else if (entry.command === 'certificates') {
+        <div class="certificates-list">
+          @for (certificate of certificates; track certificate.id) {
+            <section class="certificate-entry">
+              <h2 class="certificate-title">{{ certificate.title }}</h2>
+              <p class="certificate-meta">
+                {{ certificate.issuer }} · {{ certificate.issued }}
+              </p>
+
+              @if (certificate.credentialUrl; as url) {
+                <a
+                  class="certificate-link"
+                  [href]="url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View credential ↗
+                </a>
+              }
+            </section>
+          }
+        </div>
+      } @else if (entry.command === 'hard skills') {
+        <dl class="skills-list">
+          @for (group of hardSkills; track group.category) {
+            <div class="skill-group">
+              <dt class="skill-category">{{ group.category }}</dt>
+              <dd class="skill-technologies">
+                {{ group.technologies.join(', ') }}
+              </dd>
+            </div>
+          }
+        </dl>
       } @else {
         <p class="command-output">{{ entry.output }}</p>
       }

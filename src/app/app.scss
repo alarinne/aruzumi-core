@@ -179,6 +179,54 @@
   overflow-wrap: anywhere;
 }
 
+.certificates-list {
+  margin: 12px 0 20px;
+}
+
+.certificate-entry + .certificate-entry {
+  margin-top: 20px;
+}
+
+.certificate-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #a47bd4;
+  overflow-wrap: anywhere;
+}
+
+.certificate-meta {
+  margin: 4px 0;
+  color: #92909c;
+  font-size: 14px;
+}
+
+.certificate-link {
+  color: #0000ee;
+  text-underline-offset: 3px;
+}
+
+.certificate-link:visited {
+  color: #551a8b;
+}
+
+.skills-list {
+  margin: 12px 0 20px;
+}
+
+.skill-group + .skill-group {
+  margin-top: 12px;
+}
+
+.skill-category {
+  color: #a47bd4;
+}
+
+.skill-technologies {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
 @keyframes cursor-blink {
   50% {
     opacity: 0;
