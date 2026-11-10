@@ -210,6 +210,23 @@
   color: #551a8b;
 }
 
+.skills-list {
+  margin: 12px 0 20px;
+}
+
+.skill-group + .skill-group {
+  margin-top: 12px;
+}
+
+.skill-category {
+  color: #a47bd4;
+}
+
+.skill-technologies {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
 @keyframes cursor-blink {
   50% {
     opacity: 0;
