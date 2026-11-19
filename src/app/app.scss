@@ -227,6 +227,26 @@
   overflow-wrap: anywhere;
 }
 
+.profile-links {
+  margin: 12px 0 20px;
+  padding: 0;
+  list-style: none;
+  overflow-wrap: anywhere;
+}
+
+.profile-links li + li {
+  margin-top: 6px;
+}
+
+.profile-link {
+  color: #0000ee;
+  text-underline-offset: 3px;
+}
+
+.profile-link:visited {
+  color: #551a8b;
+}
+
 @keyframes cursor-blink {
   50% {
     opacity: 0;
