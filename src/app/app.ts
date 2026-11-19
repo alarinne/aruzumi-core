@@ -7,6 +7,7 @@ import { WORK_EXPERIENCE } from './terminal/experience';
 import { EDUCATION } from './terminal/education';
 import { CERTIFICATES } from './terminal/certificates';
 import { HARD_SKILLS, SOFT_SKILLS} from './terminal/skills';
+import { PROFILE_LINKS } from './terminal/links';
 
 interface TerminalEntry{
   command: string;
@@ -30,6 +31,7 @@ export class App {
   readonly certificates = CERTIFICATES;
   readonly hardSkills = HARD_SKILLS;
   readonly softSkills = SOFT_SKILLS;
+  readonly profileLinks = PROFILE_LINKS;
 
   executeCommand(input: HTMLInputElement): void {
     const command = input.value.trim();
@@ -67,6 +69,10 @@ export class App {
         break;
 
       case 'soft skills':
+        output = '';
+        break;
+
+      case 'links':
         output = '';
         break;
 

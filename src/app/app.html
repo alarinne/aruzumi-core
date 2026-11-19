@@ -108,6 +108,20 @@
             </div>
           }
         </dl>
+      } @else if (entry.command === 'links') {
+        <ul class="profile-links">
+          @for (link of profileLinks; track link.name) {
+            <li>
+              <span>{{ link.name }}: </span>
+              <a
+                class="profile-link"
+                [href]="link.url"
+                target="_blank"
+                rel="noopener noreferrer"
+              >{{ link.label }}</a>
+            </li>
+          }
+        </ul>
       } @else {
         <p class="command-output">{{ entry.output }}</p>
       }
