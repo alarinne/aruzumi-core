@@ -25,3 +25,28 @@ export const HARD_SKILLS: SkillGroup[] = [
     technologies: ['Grafana', 'Prometheus'],
   },
 ];
+
+export interface SoftSkill {
+  name: string;
+  description: string;
+}
+
+
+export const SOFT_SKILLS: SoftSkill[] = [
+  {
+    name: 'Problem-solving',
+    description: 'Investigate issues, break them down, and find practical solutions.',
+  },
+  {
+    name: 'Ownership',
+    description: 'Take responsibility for tasks and follow through on implementation.',
+  },
+  {
+    name: 'Collaboration',
+    description: 'Clarify requirements, discuss solutions, and share progress with the team.',
+  },
+  {
+    name: 'Adaptability',
+    description: 'Learn unfamiliar tools and technologies to solve the task at hand.',
+  },
+];

@@ -99,6 +99,29 @@
             </div>
           }
         </dl>
+      } @else if (entry.command === 'soft skills') {
+        <dl class="skills-list">
+          @for (skill of softSkills; track skill.name) {
+            <div class="skill-group">
+              <dt class="skill-category">{{ skill.name }}</dt>
+              <dd class="skill-technologies">{{ skill.description }}</dd>
+            </div>
+          }
+        </dl>
+      } @else if (entry.command === 'links') {
+        <ul class="profile-links">
+          @for (link of profileLinks; track link.name) {
+            <li>
+              <span>{{ link.name }}: </span>
+              <a
+                class="profile-link"
+                [href]="link.url"
+                target="_blank"
+                rel="noopener noreferrer"
+              >{{ link.label }}</a>
+            </li>
+          }
+        </ul>
       } @else {
         <p class="command-output">{{ entry.output }}</p>
       }
